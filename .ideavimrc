@@ -1,0 +1,52 @@
+set NERDTree
+set showmode
+set scrolloff=10
+set ignorecase smartcase
+
+let mapleader = " "
+:map <leader>gd <Action>(GotoDeclaration)
+:map <leader>gi <Action>(ReSharperGotoImplementation)
+:map <leader>gt <Action>(ActivateTerminalToolWindow)
+:map <leader>gu <Action>(ShowUsages)
+:map <leader>gm <Action>(ShowIntentionActions)
+
+:map <leader>ie <Action>(ShowErrorDescription)
+:map <leader>id <Action>(QuickJavaDoc)
+
+:noremap U <c-r>
+:noremap Y y$
+:noremap L $
+:noremap H ^
+:noremap J 5j
+:noremap K 5k
+:map <leader>p "0p
+:map <leader>P "0P
+:vmap y ygv<Esc>
+
+:map <leader>ff <Action>(GotoFile)
+:map <leader>fs <Action>(Switcher)
+
+:map <leader>e <Action>(GotoNextError)
+:map <leader>b <Action>(ToggleLineBreakpoint)
+:map <leader>d <Action>(Debug)
+
+:map <leader>rn <Action>(RenameElement)
+
+:map <leader>tr <Action>(RiderUnitTestRunContextAction)
+:map <leader>td <Action>(RiderUnitTestDebugContextAction)
+
+Plug 'easymotion/vim-easymotion'
+:map s <Plug>(easymotion-bd-f)
+
+Plug 'terryma/vim-multiple-cursors'
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>
+
+Plug 'tpope/vim-surround'
+Plug 'machakann/vim-highlightedyank'
+
+let g:highlightedyank_highlight_duration = 100
+
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
